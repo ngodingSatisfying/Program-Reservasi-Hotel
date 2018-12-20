@@ -149,8 +149,8 @@ public class Login extends javax.swing.JFrame {
                 
                 if (rs.next()) {
                     String un = rs.getString("username");
-                        DataDiri d = new DataDiri(un);
-                        d.setVisible(true);
+                        CinCout c = new CinCout(un);
+                        c.setVisible(true);
                         setVisible(false);
                 }
                 

@@ -62,7 +62,8 @@ public class DataDiri extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnClose = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
-        txtAlamat = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtAlamat = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -137,6 +138,10 @@ public class DataDiri extends javax.swing.JFrame {
             }
         });
 
+        txtAlamat.setColumns(20);
+        txtAlamat.setRows(5);
+        jScrollPane1.setViewportView(txtAlamat);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -161,7 +166,7 @@ public class DataDiri extends javax.swing.JFrame {
                     .addComponent(txtKtp)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtAlamat, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(radioPria)
@@ -215,8 +220,8 @@ public class DataDiri extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelAlamat)
-                    .addComponent(txtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(98, 98, 98)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSubmit)
                     .addComponent(btnClear)
@@ -265,7 +270,7 @@ public class DataDiri extends javax.swing.JFrame {
                 pst.setString(6, txtAlamat.getText());
                 
                 pst.executeUpdate();                
-                JOptionPane.showMessageDialog(null, "Insert ke database berhasil");
+                JOptionPane.showMessageDialog(null, "Input data customer berhasil");
                 
                 new PanelReservasiHotel().setVisible(true);
                 setVisible(false);
@@ -306,7 +311,8 @@ public class DataDiri extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        new Login().setVisible(true);
+        CinCout c = new CinCout();
+        c.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_btnBackActionPerformed
 
@@ -352,6 +358,7 @@ public class DataDiri extends javax.swing.JFrame {
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelAlamat;
     private javax.swing.JLabel labelJumlah;
     private javax.swing.JLabel labelKelamin;
@@ -360,7 +367,7 @@ public class DataDiri extends javax.swing.JFrame {
     private javax.swing.JLabel labelTelp;
     private javax.swing.JRadioButton radioPria;
     private javax.swing.JRadioButton radioWanita;
-    private javax.swing.JTextField txtAlamat;
+    private javax.swing.JTextArea txtAlamat;
     private javax.swing.JTextField txtJumlah;
     private javax.swing.JTextField txtKtp;
     private javax.swing.JTextField txtNama;

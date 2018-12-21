@@ -51,6 +51,11 @@ public class CinCout extends javax.swing.JFrame {
         });
 
         Cout.setText("CHECK OUT");
+        Cout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CoutActionPerformed(evt);
+            }
+        });
 
         Cin.setText("CHECK IN");
         Cin.addActionListener(new java.awt.event.ActionListener() {
@@ -116,6 +121,12 @@ public class CinCout extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_UserNameActionPerformed
+
+    private void CoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CoutActionPerformed
+       CoutPanel c = new CoutPanel();
+       c.setVisible(true);
+       setVisible(false);
+    }//GEN-LAST:event_CoutActionPerformed
 
     /**
      * @param args the command line arguments
